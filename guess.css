@@ -9,11 +9,11 @@ body{
     justify-content: center;
     align-items: center;
     margin-top: 200px;
-    background-color: rgb(181, 240, 246);
+    background-color: pink;
 }
 
 .container{
-    background-color: orange;
+    background-color: hotpink;
     padding: 50px;
     border-radius: 10px;
     margin-top: -25px;
