@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="guess.css" />
+    <title>My Guessing Game</title>
+  </head>
+  <body>
+
+    <div class="container">
+    <h1>Guess the Number</h1>
+    <h4>(1-100)</h4>
+    <input type="number" id="guess" placeholder="Enter your number" />
+    <button onclick="checkGuess()">Guess</button>
+    <p id="message" style="margin-top: 10px; margin-bottom: 20px;"></p>
+    </div>
+
+
+
+
+    
+    <script>
+      let number = Math.floor(Math.random() * 100) + 1;
+
+      function checkGuess() {
+        let guess = Number(document.getElementById("guess").value);
+        let message = document.getElementById("message"); // also to change element's text and style.
+
+
+        //VALIDATION CHECK
+        //!guess ensures the user has entered something including null or undefined, 
+        //guess < 1 whether the number is less than 1 and vise versa
+        if (!guess || guess < 1 || guess > 100) {
+          message.textContent = "Enter a number between 1 and 100.";
+          message.style.color = "lightblue";
+          return;
+        }
+
+        if (guess == number) {
+          message.textContent = "You guessed it right!";
+          message.style.color = "lightgreen";
+        } else if (guess < number) {
+          message.textContent = "Too Low, try again";
+          message.style.color = "blue";
+        } else {
+          message.textContent = "Too high, try again";
+          message.style.color = "blue";
+        }
+      }
+    </script>
+  </body>
+</html>
